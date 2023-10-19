@@ -1,8 +1,6 @@
 class Employee{
-    private String name;
-    private int empId;
-    private int salary;
-    private String designation;
+    private String name,designation;
+    int empId,salary;
 
     Employee(String name, int empId, int salary, String designation){
         this.name = name;
@@ -14,6 +12,7 @@ class Employee{
     public void getDetails(){
         System.out.println("| Name: " + name + " | EmpId: " + empId + " | Salary: " + salary + "| Designation: " + designation + " |\n");
     }
+
     public static void main(String[] args) {
         Employee e1 = new Employee("John", 101, 20000, "Manager");
         Employee e2 = new Employee("Jennie", 102, 30000, "Developer");

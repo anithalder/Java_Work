@@ -4,5 +4,12 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "gitConfigUser.selectedProfile": "anit"
+    "gitConfigUser.selectedProfile": "anit",
+    "cSpell.words": [
+        "Withdrawaled",
+        "জমাও",
+        "টাকা",
+        "ব্যাঙ্ক",
+        "মেরে"
+    ]
 }

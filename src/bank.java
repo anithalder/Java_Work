@@ -50,67 +50,67 @@ class BankApp {
         withdrawDeposit[] accounts = new withdrawDeposit[3]; // Create an array to store multiple accounts
         initializeAccounts(accounts); // Initialize accounts
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("\n\t\t🤗 🤗 🤑  Welcome in our পোঁদ মেরে টাকা জমাও Bank  🤑 🤗 🤗");
 
-        System.out.println("\n\t\t🤗 🤗 🤑  Welcome in our পোঁদ মেরে টাকা জমাও ব্যাঙ্ক Bank  🤑 🤗 🤗");
-
-        while(true){
-            System.out.println("\t\t\n1. For deposit");
-            System.out.println("\t\t\n2. For withdraw");
-            System.out.println("\t\t\n3. For Enquiry");
-            System.out.println("\t\t\n4. For Quit");
-            System.out.print("\t\nEnter your choice: ");
-            int choice = sc.nextInt();
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter the account number for deposit: ");
-                    long accountNumber = sc.nextLong();
-                    int accountIndex = findAccount(accounts, accountNumber);
-                    if (accountIndex != -1) {
-                        System.out.print("Enter the amount you want to deposit: ");
-                        double amount = sc.nextDouble();
-                        accounts[accountIndex].deposit(amount);
-                    } else {
-                        System.out.println("\n\t\t!!!!! 😢 😥 😔 Account not found 😔 😥 😢 !!!!!\n");
-                    }
-                    break;
-
-                case 2:
-                    System.out.print("Enter the account number for withdrawal: ");
-                    accountNumber = sc.nextLong();
-                    accountIndex = findAccount(accounts, accountNumber);
-                    if (accountIndex != -1) {
-                        System.out.print("Enter the amount you want to withdraw: ");
-                        double amount = sc.nextDouble();
-                        accounts[accountIndex].withdraw(amount);
-                    } 
-                    else {
-                        System.out.println("\n\t\t!!!!! 😢 😥 😔 Account not found 😔 😥 😢 !!!!!\n");
-                    }
-                    break;
-
-                case 3:
-                    System.out.print("Enter the account number for enquiry: ");
-                    accountNumber = sc.nextLong();
-                
-                    for (withdrawDeposit account : accounts) {
-                        if (account.accNo == accountNumber) {
-                            System.out.println("\nCurrent Account Information & Status:\n");
-                            account.displayAccountInfo();
+            while(true){
+                System.out.println("\t\t\n1. For deposit");
+                System.out.println("\t\t\n2. For withdraw");
+                System.out.println("\t\t\n3. For Enquiry");
+                System.out.println("\t\t\n4. For Quit");
+                System.out.print("\t\nEnter your choice: ");
+                int choice = sc.nextInt();
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter the account number for deposit: ");
+                        long accountNumber = sc.nextLong();
+                        int accountIndex = findAccount(accounts, accountNumber);
+                        if (accountIndex != -1) {
+                            System.out.print("Enter the amount you want to deposit: ");
+                            double amount = sc.nextDouble();
+                            accounts[accountIndex].deposit(amount);
+                        } else {
+                            System.out.println("\n\t\t!!!!! 😢 😥 😔 Account not found 😔 😥 😢 !!!!!\n");
                         }
+                        break;
+
+                    case 2:
+                        System.out.print("Enter the account number for withdrawal: ");
+                        accountNumber = sc.nextLong();
+                        accountIndex = findAccount(accounts, accountNumber);
+                        if (accountIndex != -1) {
+                            System.out.print("Enter the amount you want to withdraw: ");
+                            double amount = sc.nextDouble();
+                            accounts[accountIndex].withdraw(amount);
+                        } 
                         else {
                             System.out.println("\n\t\t!!!!! 😢 😥 😔 Account not found 😔 😥 😢 !!!!!\n");
-                            break;
                         }
-                    }
-                    break;
-                
-                case 4:
-                    System.exit(0);
+                        break;
 
-                default:
-                    System.out.println("\n\t\t!!!!! Your choice is invalid ❌ !!!!!\n");
-                    break;
+                    case 3:
+                        System.out.print("Enter the account number for enquiry: ");
+                        accountNumber = sc.nextLong();
+                    
+                        for (withdrawDeposit account : accounts) {
+                            if (account.accNo == accountNumber) {
+                                System.out.println("\nCurrent Account Information & Status:\n");
+                                account.displayAccountInfo();
+                            }
+                            else {
+                                System.out.println("\n\t\t!!!!! 😢 😥 😔 Account not found 😔 😥 😢 !!!!!\n");
+                                break;
+                            }
+                        }
+                        break;
+                    
+                    case 4:
+                        System.exit(0);
+
+                    default:
+                        System.out.println("\n\t\t!!!!! Your choice is invalid ❌ !!!!!\n");
+                        break;
+                }
             }
         }
     }

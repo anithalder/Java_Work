@@ -12,5 +12,6 @@
         "টাকা",
         "ব্যাঙ্ক",
         "মেরে"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

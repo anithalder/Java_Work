@@ -75,7 +75,7 @@ class BankApp {
 
         try (Scanner sc = new Scanner(System.in)) {
             while(true){
-                System.out.println("\n\n\t\t🤗 🤗 🤑  Welcome in our পোঁদ মেরে টাকা জমাও Bank  🤑 🤗 🤗");
+                System.out.println("\n\n\t\t🤗 🤗 🤑  Welcome in our পকেট মেরে টাকা জমাও Bank  🤑 🤗 🤗");
                 System.out.println("\n\t\t\t\t1. For deposit");
                 System.out.println("\n\t\t\t\t2. For withdraw");
                 System.out.println("\n\t\t\t\t3. For Enquiry");
@@ -137,6 +137,7 @@ class BankApp {
                                 }
                                 else{
                                     System.out.println(RED + "\n\t\t!!!!! 😢 😥 😔 Wrong Password 😔 😥 😢 !!!!!\n" + RESET);
+                                    continue;
                                 }
                             }
                         }

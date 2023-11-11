@@ -1,8 +1,8 @@
-class BankAccount {
+class Bank_Account {
     private long accountNumber;
     protected double balance;
 
-    public BankAccount(long accountNumber, double initialBalance) {
+    public Bank_Account(long accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
     }
@@ -31,7 +31,7 @@ class BankAccount {
     }
 }
 
-class SavingsAccount extends BankAccount {
+class SavingsAccount extends Bank_Account {
     public SavingsAccount(int accountNumber, double initialBalance) {
         super(accountNumber, initialBalance);
     }
@@ -47,7 +47,7 @@ class SavingsAccount extends BankAccount {
     }
 }
 
-class CheckingAccount extends BankAccount {
+class CheckingAccount extends Bank_Account {
     public CheckingAccount(int accountNumber, double initialBalance) {
         super(accountNumber, initialBalance);
     }

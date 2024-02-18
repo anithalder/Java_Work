@@ -159,7 +159,7 @@ class BankApp {
         }
     }
 
-    public static void initializeAccounts(withdrawDeposit[] accounts) {
+    // public static void initializeAccounts(withdrawDeposit[] accounts) {
         accounts[0] = new withdrawDeposit(123456789, "Anit Halder","anit...223", 10000);
         accounts[1] = new withdrawDeposit(987654321, "Arpan Mitra","arpan@123", 5000);
         accounts[2] = new withdrawDeposit(222222222, "Subhajit Sardar","subhajit123", 8000);
